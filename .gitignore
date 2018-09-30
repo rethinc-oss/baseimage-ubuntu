@@ -13,7 +13,3 @@ iso/
 
 .DS_Store
 .bundle/
-
-custom.sh
-script/custom/*
-!script/custom/.gitkeep

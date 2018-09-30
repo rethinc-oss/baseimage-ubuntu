@@ -159,6 +159,11 @@
   ],
   "provisioners": [
     {
+      "type": "file",
+      "source": "script/custom",
+      "destination": "/tmp/custom-scripts"
+    },
+    {
       "environment_vars": [
         "CLEANUP_PAUSE={{user `cleanup_pause`}}",
         "DEBIAN_FRONTEND=noninteractive",
