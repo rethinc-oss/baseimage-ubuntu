@@ -2,6 +2,8 @@
 
 echo "==> Removing Packages"
 
+apt -y install dirmngr
+
 apt -y purge btrfs-tools cpp cpp-5 ed gcc gcc-5 krb5-locales language-pack-gnome-en \
        language-pack-gnome-en-base language-selector-common laptop-detect lxc-common \
        lxcfs lxd lxd-client make nfs-common ntfs-3g patch plymouth \

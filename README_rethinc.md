@@ -1,0 +1,1 @@
+packer build -only=virtualbox-iso -var-file="rethinc.json" ubuntu.json
