@@ -2,8 +2,9 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-    config.vm.define "vagrant-ubuntu1704-desktop"
-    config.vm.box = "ubuntu1704-desktop"
+    config.vm.box = "rethinc-oss/baseimage-ubuntu-1804"
+
+    config.ssh.username = "sysop"
 
     config.vm.provider :virtualbox do |v, override|
         v.gui = false

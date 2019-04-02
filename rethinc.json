@@ -1,17 +1,20 @@
 {
     "_comment": "Build with `packer build -var-file=rethinc.json ubuntu.json`",
-    "vm_name": "baseimage-ubuntu",
-    "version": "0.3.0",
+    "vm_name": "baseimage-ubuntu-1804",
+    "version": "0.5.0",
     "cpus": "2",
     "memory": "1024",
     "disk_size": "10240",
-    "iso_checksum": "a5b0ea5918f850124f3d72ef4b85bda82f0fcd02ec721be19c1a6952791c8ee8",
+    "iso_checksum": "a2cb36dc010d98ad9253ea5ad5a07fd6b409e3412c48f1860536970b073c98f5",
     "iso_checksum_type": "sha256",
-    "iso_name": "ubuntu-18.04.1-server-amd64.iso",
-    "iso_url": "http://cdimage.ubuntu.com/ubuntu/releases/18.04/release/ubuntu-18.04.1-server-amd64.iso",
+    "iso_name": "ubuntu-18.04.2-server-amd64.iso",
+    "iso_url": "http://cdimage.ubuntu.com/ubuntu/releases/18.04/release/ubuntu-18.04.2-server-amd64.iso",
     "preseed" : "preseed-rethinc.cfg",
-    "boot_command_prefix": "<esc><esc><enter><wait>",
     "vmware_timesync": "FALSE",
     "vagrantfile_template": "tpl/vagrantfile-rethinc.tpl",
-    "custom_script": "script/custom.sh"
+    "custom_script": "script/custom.sh",
+    "hostname": "localhost",
+    "ssh_fullname": "System Operator",
+    "ssh_username": "sysop",
+    "ssh_password": "sysop"
 }
