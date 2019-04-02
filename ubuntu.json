@@ -4,7 +4,7 @@
     {
       "boot_command": [
         "{{ user `boot_command_prefix` }}",
-        "/install/vmlinuz noapic ",
+        "/install/vmlinuz ",
         "initrd=/install/initrd.gz ",
         "file=/floppy/{{ user `preseed` }} ",
         "debian-installer={{ user `locale` }} auto locale={{ user `locale` }} kbd-chooser/method=us ",
@@ -50,7 +50,7 @@
     {
       "boot_command": [
         "{{ user `boot_command_prefix` }}",
-        "/install/vmlinuz noapic ",
+        "/install/vmlinuz ",
         "initrd=/install/initrd.gz ",
         "file=/floppy/{{ user `preseed` }} ",
         "debian-installer={{ user `locale` }} auto locale={{ user `locale` }} kbd-chooser/method=us ",
@@ -103,7 +103,7 @@
     {
       "boot_command": [
         "{{ user `boot_command_prefix` }}",
-        "/install/vmlinuz noapic ",
+        "/install/vmlinuz ",
         "initrd=/install/initrd.gz ",
         "file=/floppy/{{ user `preseed` }} ",
         "debian-installer={{ user `locale` }} auto locale={{ user `locale` }} kbd-chooser/method=us ",
