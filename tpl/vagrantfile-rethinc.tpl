@@ -16,6 +16,7 @@ Vagrant.configure("2") do |config|
         v.customize ["modifyvm", :id, "--rtcuseutc", "on"]
         v.customize ["modifyvm", :id, "--accelerate3d", "off"]
         v.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
+        v.customize ["setextradata", :id, "VBoxInternal/Devices/VMMDev/0/Config/GetHostTimeDisabled", 1]
     end
 
     ["vmware_fusion", "vmware_workstation"].each do |provider|
@@ -28,7 +29,13 @@ Vagrant.configure("2") do |config|
         v.vmx["RemoteDisplay.vnc.enabled"] = "false"
         v.vmx["RemoteDisplay.vnc.port"] = "5900"
         v.vmx["scsi0.virtualDev"] = "lsilogic"
-        v.vmx["mks.enable3d"] = "FALSE"
+        v.vmx["mks.enable3d"] = "false"
+        v.vmx["tools.syncTime"] = "false"
+        v.vmx["time.synchronize.continue"] = "false"
+        v.vmx["time.synchronize.restore"] = "false"
+        v.vmx["time.synchronize.resume.disk"] = "false"
+        v.vmx["time.synchronize.shrink"] = "false"
+        v.vmx["time.synchronize.tools.startup"] = "false"
       end
     end
 end
