@@ -1,7 +1,7 @@
 {
     "_comment": "Build with `packer build -var-file=rethinc.json ubuntu.json`",
     "vm_name": "baseimage-ubuntu-1804",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "cpus": "2",
     "memory": "1024",
     "disk_size": "10240",
