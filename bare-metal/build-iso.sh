@@ -36,15 +36,15 @@ umount ${ISO_MOUNT_DIR}
 ### Build the addon ramdisks with the preseed files
 rm -rf ${INITRD_DIR}
 mkdir -p ${INITRD_DIR}
-cat /vagrant/http/preseed-common.cfg >> ${INITRD_DIR}preseed.cfg 
-cat /vagrant/http/preseed-rootonly.cfg >> ${INITRD_DIR}preseed.cfg 
+cp /vagrant/http/preseed-common.cfg ${INITRD_DIR}
+cp /vagrant/http/preseed-rootonly.cfg "${INITRD_DIR}preseed.cfg"
 (cd ${INITRD_DIR} && find . | cpio -o -H newC | gzip) > ${ISO_BUILD_DIR}/initrd-rootonly.gz
 chmod -w -R ${BUILD_DIR}/initrd-rootonly.gz
 
 rm -rf ${INITRD_DIR}
 mkdir -p ${INITRD_DIR}
-cat /vagrant/http/preseed-common.cfg >> ${INITRD_DIR}preseed.cfg 
-cat /vagrant/http/preseed-rootdata.cfg >> ${INITRD_DIR}preseed.cfg 
+cp /vagrant/http/preseed-common.cfg ${INITRD_DIR}
+cp /vagrant/http/preseed-rootdata.cfg "${INITRD_DIR}preseed.cfg"
 (cd ${INITRD_DIR} && find . | cpio -o -H newC | gzip) > ${ISO_BUILD_DIR}/initrd-rootdata.gz
 chmod -w -R ${BUILD_DIR}/initrd-rootdata.gz
 

@@ -20,9 +20,7 @@
         "-- <enter>"
       ],
       "disk_size": "{{ user `disk_size` }}",
-      "floppy_files": [
-        "http/{{ user `preseed` }}"
-      ],
+      "floppy_files": "{{ user `floppy_files` }}",
       "guest_os_type": "{{ user `vmware_guest_os_type` }}",
       "headless": "{{ user `headless` }}",
       "http_directory": "http",
@@ -66,9 +64,7 @@
         "-- <enter>"
       ],
       "disk_size": "{{ user `disk_size` }}",
-      "floppy_files": [
-        "http/{{ user `preseed` }}"
-      ],
+      "floppy_files":  "{{ user `floppy_files` }}",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "guest_os_type": "{{ user `virtualbox_guest_os_type` }}",
       "hard_drive_interface": "sata",
@@ -119,9 +115,7 @@
         "-- <wait><enter>"
       ],
       "disk_size": "{{ user `disk_size` }}",
-      "floppy_files": [
-        "http/{{ user `preseed` }}"
-      ],
+      "floppy_files":  "{{ user `floppy_files` }}",
       "guest_os_type": "{{ user `parallels_guest_os_type` }}",
       "http_directory": "http",
       "iso_checksum": "{{ user `iso_checksum` }}",
@@ -203,6 +197,7 @@
     "custom_script": "custom-script.sh",
     "desktop": "false",
     "disk_size": "65536",
+    "floppy_files": "http/preseed-packer.cfg,http/preseed-common.cfg,http/preseed-rootonly.cfg",
     "ftp_proxy": "{{env `ftp_proxy`}}",
     "headless": "false",
     "http_proxy": "{{env `http_proxy`}}",
